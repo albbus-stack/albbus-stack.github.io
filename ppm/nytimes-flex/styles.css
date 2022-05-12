@@ -119,12 +119,12 @@ header {
 header div:last-child a {
   color: rgb(50, 104, 145);
   text-transform: uppercase;
+  justify-self: flex-end;
 }
 
 .headlines {
   display: flex;
   flex-direction: row;
-  justify-content: flex-start;
   align-items: center;
   padding-bottom: 1rem;
   padding-top: 1.25rem;
@@ -145,7 +145,6 @@ header div:last-child a {
 h2 {
   font-size: 0.9375rem;
   white-space: nowrap;
-  width: max-content;
 }
 
 h2 span {
@@ -259,6 +258,79 @@ h2:hover {
   color: #5a5a5a;
 }
 
+.carousel {
+  display: grid;
+  grid-auto-flow: column;
+  overflow: auto;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  width: 100vw;
+  transform: translateX(-2.4rem);
+  scroll-snap-type: x proximity;
+  border-top: 1px solid rgb(235, 235, 235);
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+
+.carousel::-webkit-scrollbar {
+  display: none;
+}
+
+.carousel-item {
+  display: flex;
+  flex-direction: column;
+  width: 220px;
+  padding-right: 1rem;
+}
+
+.carousel .carousel-item:first-of-type {
+  margin-left: 2.5rem;
+}
+
+.carousel-item img {
+  height: 220px;
+  width: 220px;
+  margin-bottom: 0.5rem;
+}
+
+.carousel-item h3 {
+  font-size: 0.9rem;
+}
+
+.carousel-item h3:hover {
+  cursor: pointer;
+  color: #5a5a5a;
+}
+
+.games {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+
+.game {
+  display: grid;
+  grid-template-columns: 4fr 1fr;
+  grid-template-rows: 1fr 2fr;
+  border-top: 1px solid rgb(235, 235, 235);
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.game h2 {
+  grid-row: 1;
+  margin-top: 0.4rem;
+}
+
+.game p {
+  grid-row: 2;
+}
+
+.game img {
+  grid-row: 1 / span 2;
+  grid-column: 2;
+}
+
 footer {
   display: flex;
   flex-direction: column;
@@ -304,7 +376,7 @@ footer .footer-title {
   font-size: 0.75rem;
   text-align: center;
   color: #666;
-  padding: 0.3rem;
+  padding: 0.2rem;
 }
 
 .copyright::before {
@@ -320,10 +392,12 @@ footer .footer-title {
 
 .footer-links {
   text-align: center;
+  padding-top: 0.5rem;
+  padding-bottom: 1.5rem;
 }
 
 .footer-links a {
   color: #666;
-  font-size: 0.75rem;
+  font-size: 0.7rem;
   padding: 0 10px;
 }
