@@ -77,9 +77,12 @@ a:hover {
 
 /* End of CSS Reset */
 
+/* Mobile */
+
 body {
   font-size: 1rem;
   color: #121212;
+  overflow-x: hidden;
 }
 
 nav {
@@ -165,6 +168,8 @@ h2 span {
 
 .article {
   position: relative;
+  display: grid;
+  grid-auto-flow: row;
   padding-left: 1.2rem;
   padding-right: 1.2rem;
   margin-top: 0.8rem;
@@ -265,7 +270,6 @@ h2:hover {
   -ms-overflow-style: none;
   scrollbar-width: none;
   width: 100vw;
-  transform: translateX(-2.4rem);
   scroll-snap-type: x proximity;
   border-top: 1px solid rgb(235, 235, 235);
   padding-top: 1.5rem;
@@ -284,7 +288,11 @@ h2:hover {
 }
 
 .carousel .carousel-item:first-of-type {
-  margin-left: 2.5rem;
+  margin-left: 2rem;
+}
+
+.carousel .carousel-item:last-of-type {
+  margin-right: 2rem;
 }
 
 .carousel-item img {
@@ -313,8 +321,7 @@ h2:hover {
   grid-template-columns: 4fr 1fr;
   grid-template-rows: 1fr 2fr;
   border-top: 1px solid rgb(235, 235, 235);
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+  padding: 1.2rem;
 }
 
 .game h2 {
@@ -335,6 +342,8 @@ footer {
   display: flex;
   flex-direction: column;
   position: relative;
+  padding-left: 1.2rem;
+  padding-right: 1.2rem;
 }
 
 footer::before {
@@ -400,4 +409,69 @@ footer .footer-title {
   color: #666;
   font-size: 0.7rem;
   padding: 0 10px;
+}
+
+/* Desktop */
+
+@media (min-width: 1010px) {
+  .article {
+    grid-template-columns: 2fr 2fr 4fr;
+    grid-template-rows: 1fr 2fr;
+    grid-gap: 1rem;
+    padding-top: 0.4rem;
+  }
+
+  .article:has(.takeaway) {
+    grid-template-rows: 1fr 2fr 2fr 1fr;
+  }
+
+  .article .takeaway:first-of-type {
+    grid-row: 3 / span 1;
+  }
+
+  .article h1,
+  .article .live {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .article h1 {
+    margin-top: 1.5rem;
+  }
+
+  .article p {
+    grid-column: 1;
+    grid-row: 2;
+  }
+
+  .article img {
+    grid-row: 1 / span 3;
+    grid-column: 2 / span 2;
+    width: 95%;
+    height: 95%;
+    margin: auto;
+  }
+
+  .newrow {
+    grid-row: 4;
+    grid-column: 1 / span 2;
+  }
+
+  .newrow-second {
+    grid-row: 4;
+    grid-column: 3;
+  }
+
+  .newrow-third {
+    grid-row: 4;
+    grid-column: 1 / span 3;
+  }
+
+  .article .takeaway:first-of-type {
+    margin-top: 0;
+  }
+
+  .carousel .carousel-item:first-of-type {
+    margin-left: 5rem;
+  }
 }
