@@ -171,7 +171,7 @@ h2 span {
   display: grid;
   grid-auto-flow: row;
   padding-left: 1.2rem;
-  padding-right: 1.2rem;
+  padding-right: 1rem;
   margin-top: 0.8rem;
 }
 
@@ -181,7 +181,7 @@ h2 span {
   top: 0;
   width: 92%;
   height: 1.8px;
-  margin-left: calc(-1.2rem + 4%);
+  margin-left: 4%;
   margin-top: -0.8rem;
   background-color: #121212;
 }
@@ -233,6 +233,7 @@ li::before {
 
 .article img {
   width: 95%;
+  margin: auto 0;
 }
 
 .article > img:last-child {
@@ -311,9 +312,28 @@ h2:hover {
 }
 
 .games {
+  position: relative;
+  margin-top: 0.5rem;
   display: flex;
   flex-direction: column;
   margin-bottom: 1rem;
+  padding-top: 0.5rem;
+}
+
+.games b {
+  margin-left: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.games::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 92%;
+  height: 1.8px;
+  margin-left: 4%;
+  margin-top: -0.8rem;
+  background-color: #121212;
 }
 
 .game {
@@ -322,6 +342,7 @@ h2:hover {
   grid-template-rows: 1fr 2fr;
   border-top: 1px solid rgb(235, 235, 235);
   padding: 1.2rem;
+  max-height: 160px;
 }
 
 .game h2 {
@@ -336,6 +357,68 @@ h2:hover {
 .game img {
   grid-row: 1 / span 2;
   grid-column: 2;
+  max-height: 130px;
+}
+
+.opinions {
+  position: relative;
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr;
+  padding: 0 1.2rem;
+}
+
+.opinions b {
+  margin-bottom: 0.3rem;
+}
+
+.opinions::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 92%;
+  height: 1.8px;
+  margin-left: 4%;
+  margin-top: -0.8rem;
+  background-color: #121212;
+}
+
+.opinion {
+  position: relative;
+  padding-top: 1rem;
+  border-top: 1px solid #c7c7c7;
+}
+
+.opinion h4 {
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  color: #727272;
+  font-weight: 400;
+  margin-bottom: 0.2rem;
+}
+
+.opinion h2 {
+  white-space: normal;
+  padding-bottom: 1rem;
+  font-size: 1.2rem;
+  line-height: 1.2em;
+}
+
+.image-opinion h2 {
+  width: 83%;
+}
+
+.image-opinion img {
+  position: absolute;
+  right: 1rem;
+  top: 1.2rem;
+  width: 13%;
+  max-width: 50px;
+}
+
+.opinions .opinion:first-of-type {
+  border-top: none;
+  padding-top: 0.2rem;
 }
 
 footer {
@@ -419,10 +502,16 @@ footer .footer-title {
     grid-template-rows: 1fr 2fr;
     grid-gap: 1rem;
     padding-top: 0.4rem;
+    padding-bottom: 1rem;
   }
 
-  .article:has(.takeaway) {
-    grid-template-rows: 1fr 2fr 2fr 1fr;
+  .article-small {
+    width: 73%;
+  }
+
+  .desktop-takeaway {
+    grid-template-columns: 3fr 2fr 4fr;
+    grid-template-rows: 0.5fr 0.5fr 0.5fr;
   }
 
   .article .takeaway:first-of-type {
@@ -448,22 +537,44 @@ footer .footer-title {
     grid-row: 1 / span 3;
     grid-column: 2 / span 2;
     width: 95%;
-    height: 95%;
     margin: auto;
   }
 
+  .first-article img {
+    grid-row: 1 / span 2 !important;
+    width: 90%;
+    max-width: 480px;
+  }
+
+  .last-article {
+    grid-template-columns: 2fr 2fr 4fr;
+    grid-template-rows: 0.5fr 1.5fr 0.5fr;
+    padding-top: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .last-article img {
+    grid-row: 1 / span 3 !important;
+    grid-column: 2 / span 2 !important;
+  }
+
   .newrow {
-    grid-row: 4;
-    grid-column: 1 / span 2;
+    grid-row: 3;
+    grid-column: 2 / span 1;
   }
 
   .newrow-second {
-    grid-row: 4;
+    grid-row: 3;
     grid-column: 3;
   }
 
+  .newrow-second {
+    border-top-width: 80%;
+    padding-right: 1rem;
+  }
+
   .newrow-third {
-    grid-row: 4;
+    grid-row: 3;
     grid-column: 1 / span 3;
   }
 
@@ -473,5 +584,27 @@ footer .footer-title {
 
   .carousel .carousel-item:first-of-type {
     margin-left: 5rem;
+  }
+
+  .opinions {
+    position: absolute;
+    top: calc(10rem + 1.5px);
+    right: 1rem;
+    width: 26%;
+  }
+
+  .opinions::after {
+    content: "";
+    position: absolute;
+    top: -0.8rem;
+    left: 0.6rem;
+    height: calc(100% + 1rem);
+    width: 0.5px;
+    margin-left: calc(-1.2rem);
+    background-color: #b7b7b7;
+  }
+
+  .opinion h2 {
+    width: 80%;
   }
 }

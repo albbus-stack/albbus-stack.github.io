@@ -6,6 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles.css" />
     <link rel="icon" type="image/png" href="./images/favicon.png" />
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
     <title>
       The New York Times - Breaking News, US News, World News and Videos
     </title>
@@ -53,7 +58,7 @@
       <h2>U.S. Inflation Data<span>24m ago</span></h2>
     </section>
 
-    <section class="article">
+    <section class="article first-article article-small">
       <b class="live">LIVE</b>
       <h1>Inflation Pressures Remain Strong; Consumer Prices Rise Sharply</h1>
       <ul>
@@ -82,7 +87,7 @@
       </section>
     </section>
 
-    <section class="article">
+    <section class="article article-small">
       <b class="live">LIVE</b>
       <h1>
         E.U. Falters in Bid for Russian Oil Ban, as Hungary Remains a Key
@@ -93,7 +98,7 @@
         persuade Hungary, which could act as a possible spoiler to European
         unity. Follow updates.
       </p>
-      <img src="./images/solider.webp" alt="a graph" />
+      <img src="./images/solider.webp" alt="a solider" />
       <section class="takeaway">
         A corrupt system came of Russia’s incomplete transition to democracy,
         allowing oligarchs to flourish, our columnist writes.
@@ -106,7 +111,60 @@
         Former President Trump must pay a $110,000 fine and meet other
         conditions or the order will be reinstated, a judge said.
       </p>
-      <img src="./images/trump.webp" alt="a graph" />
+      <img src="./images/trump.webp" alt="Trump" />
+    </section>
+
+    <section class="opinions">
+      <b>Opinion</b>
+      <div class="opinion">
+        <h4>Tom Stevenson</h4>
+        <h2>
+          America and Its Allies Want to Bleed Russia. They Really Shouldn’t.
+        </h2>
+      </div>
+      <div class="opinion image-opinion">
+        <h4>Ross Douthat</h4>
+        <h2>
+          Elon Musk Has Bigger Plans Than Just Letting Trump Back on Twitter
+        </h2>
+        <img src="./images/ross.webp" alt="Ross Douthat" />
+      </div>
+
+      <div class="opinion image-opinion">
+        <h4>Thomas B. Edsall</h4>
+        <h2>
+          If There’s a Loud Fight About Roe, ‘Centrist America Will Just Turn
+          Down the Volume’
+        </h2>
+        <img src="./images/thomas.webp" alt="Thomas B. Edsall" />
+      </div>
+
+      <div class="opinion image-opinion">
+        <h4>Jamelle Bouie</h4>
+        <h2>The Movement That Put Alito on the Court Isn’t Finished</h2>
+        <img src="./images/jamelle.webp" alt="Jamelle Bouie" />
+      </div>
+
+      <div class="opinion image-opinion">
+        <h4>Ross Douthat</h4>
+        <h2>
+          Elon Musk Has Bigger Plans Than Just Letting Trump Back on Twitter
+        </h2>
+        <img src="./images/ross.webp" alt="Ross Douthat" />
+      </div>
+
+      <div class="opinion image-opinion">
+        <h4>Jamelle Bouie</h4>
+        <h2>The Movement That Put Alito on the Court Isn’t Finished</h2>
+        <img src="./images/jamelle.webp" alt="Jamelle Bouie" />
+      </div>
+
+      <div class="opinion">
+        <h4>Tom Stevenson</h4>
+        <h2>
+          America and Its Allies Want to Bleed Russia. They Really Shouldn’t.
+        </h2>
+      </div>
     </section>
 
     <section class="article">
@@ -116,26 +174,7 @@
         methamphetamine; overall, the U.S. saw a 15 percent increase in deaths
         from overdoses in 2021.
       </p>
-      <img src="./images/girl.webp" alt="a graph" />
-    </section>
-
-    <section class="article">
-      <b class="live">LIVE</b>
-      <h1>Senate to Vote on Abortion Rights</h1>
-      <p>
-        Democrats are trying to get ahead of the Supreme Court with a bill to
-        protect abortion access. It is all but certain to be blocked. Follow
-        updates.
-      </p>
-      <img src="./images/senate.webp" alt="a graph" />
-      <section class="takeaway">
-        Susan Collins and Lisa Murkowski, Republican senators who support
-        abortion rights, have come up with a separate bill.
-      </section>
-      <section class="takeaway newrow-third">
-        Senator Joe Manchin, the West Virginia Democrat, said he would vote
-        against his party’s abortion access bill.
-      </section>
+      <img src="./images/girl.webp" alt="a girl" />
     </section>
 
     <section class="carousel">
@@ -157,7 +196,23 @@
       </div>
     </section>
 
+    <section class="article last-article">
+      <b class="live">LIVE</b>
+      <h1>Senate to Vote on Abortion Rights</h1>
+      <p>
+        Democrats are trying to get ahead of the Supreme Court with a bill to
+        protect abortion access. It is all but certain to be blocked. Follow
+        updates.
+      </p>
+      <img src="./images/senate.webp" alt="the senate" />
+      <section class="takeaway">
+        Senator Joe Manchin, the West Virginia Democrat, said he would vote
+        against his party’s abortion access bill.
+      </section>
+    </section>
+
     <section class="games">
+      <b>Play</b>
       <div class="game">
         <h2>Spelling Bee</h2>
         <p>How many words can you make with 7 letters?</p>
@@ -213,5 +268,9 @@
         <a href="#">Subscriptions</a>
       </div>
     </footer>
+
+    <script defer>
+      $("section .takeaway").parent().addClass("desktop-takeaway");
+    </script>
   </body>
 </html>
