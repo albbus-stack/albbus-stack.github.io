@@ -403,7 +403,7 @@ h2:hover {
 }
 
 .image-opinion h2 {
-  width: 83%;
+  width: 78%;
 }
 
 .image-opinion img {
@@ -432,7 +432,7 @@ footer::before {
   position: absolute;
   top: 0;
   left: 0;
-  width: calc(100% + 2.4rem);
+  width: calc(100% + 1.2rem);
   height: 2px;
   margin-left: calc(-1.2rem);
   background-color: #dcdcdc;
