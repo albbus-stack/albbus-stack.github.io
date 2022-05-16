@@ -503,10 +503,6 @@ footer .footer-title {
     padding-bottom: 1rem;
   }
 
-  .article-small {
-    width: 73%;
-  }
-
   .desktop-takeaway {
     grid-template-columns: 3fr 2fr 4fr;
     grid-template-rows: 0.5fr 0.5fr 0.5fr;
@@ -538,20 +534,25 @@ footer .footer-title {
     margin: auto;
   }
 
-  .first-article img {
+  section:nth-of-type(2) img {
     grid-row: 1 / span 2 !important;
     width: 90%;
     max-width: 480px;
   }
 
-  .last-article {
+  section:nth-of-type(2),
+  section:nth-of-type(3) {
+    width: 73%;
+  }
+
+  section:nth-last-of-type(2) {
     grid-template-columns: 2fr 2fr 4fr;
     grid-template-rows: 0.5fr 1.5fr 0.5fr;
     padding-top: 1rem;
     margin-bottom: 1.5rem;
   }
 
-  .last-article img {
+  section:nth-last-of-type(2) img {
     grid-row: 1 / span 3 !important;
     grid-column: 2 / span 2 !important;
   }
